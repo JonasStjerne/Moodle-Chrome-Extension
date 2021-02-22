@@ -1,34 +1,10 @@
 <html>
-    <script>
-        function selectElement(id, valueToSelect) {    
-            let element = document.getElementById(id);
-            element.value = valueToSelect;
-        }
-
-        var courseOffsets = JSON.parse(localStorage.courseOffsets);
-        for (let courseId in courseOffsets) {
-            var html = '<input value="' + courseId+'placeholder="Id på fag">';
-            html += '<label for="courseOffset">Vælg offset:</label>';
-            html += '<select id="course' + courseId + '" name = "courseOffset">';
-            html += '<option  value="0">0</option>';
-            html += '<option value="1">1</option>';
-            html += '<option value="2">2</option>';
-            html += '<option value="3">3</option>';
-            html += '<option value="4">4</option>';
-            html += '</select>';
-            document.getElementsByTagName("body").innerHTML= html;
-            selectElement(("course"+courseId), courseOffsets[courseId]);
-        }
-    </script>
+    <head>
+        <script src="options.js"></script>
+    </head>
     <body>
-        <input placeholder="Navn på fag">
-        <label for="courseOffset">Vælg offset:</label>
-        <select name = "courseOffset">
-            <option  value="0">0</option>
-            <option  selected="selected" value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
+        <button onclick="addCourseOffset()">Tilføj offset for fag</button>
+        <button onclick="saveCourseOffset()">Gem ændringer</button>
         </select>
     </body>
 </html>
