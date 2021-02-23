@@ -1,4 +1,3 @@
-//var courseOffsets = JSON.parse(localStorage.courseOffsets);
 chrome.storage.sync.get({
     courses:[]
   }, 
@@ -8,7 +7,7 @@ chrome.storage.sync.get({
 
 if (window.location.href.indexOf("https://www.moodle.aau.dk/local/planning/calendar.php") >= 0) {
     function getKursusgangNumber() {
-       // try {
+       try {
             var kursusgang = document.getElementsByClassName("modal-title")[0].innerHTML;
             if (kursusgang) { 
                 let stringKursusgangNumber = kursusgang.slice(kursusgang.indexOf("Kursusgang")+11,kursusgang.length);
@@ -22,10 +21,10 @@ if (window.location.href.indexOf("https://www.moodle.aau.dk/local/planning/calen
                         var urlKursus = document.getElementsByClassName("modal-body plancal_event_view_popup_content plancal_popup_limit_content_height")[0].children[1].children[0].children[2].children[0].getAttribute("href");
                          document.getElementsByClassName("modal-body plancal_event_view_popup_content plancal_popup_limit_content_height")[0].children[1].children[0].children[2].children[0].setAttribute("href", (urlKursus + "&kursusgang=" + kursusgangNumber));    
                     }
-                }, 1000);  
+                }, 500);  
               
             }
-      //  } catch {console.log("catch");}
+       } catch {}
     }
 
     const targetNode = document.getElementById("page-wrapper");
@@ -69,31 +68,6 @@ if (window.location.href.indexOf("www.moodle.aau.dk/course/view.php?") >= 0) {
             window.scrollBy(0, -50);
         }
     }, 1000);    
-
-
-
-
-    // setTimeout(function(){
-    //     if (getParameterByName('kursusgang') != null) {
-    //         console.log(getParameterByName);
-    //         if (localStorage.courseOffsets.indexOf(getParameterByName("id")) >= 0) {
-    //             for (i=0; courseOffsets >= i; i++) {
-    //                 if (courseOffsets[i].courseId == getParameterByName("id")) {
-    //                     var element = document.getElementById(("section-" + (getParameterByName('kursusgang')+courseOffsets[i].courseOffset)));
-    //                 }
-    //             }
-    //             // var indexOffetsStorage = JSON.parse(localStorage.courseOffsets).findIndex(getParameterByName("id"));
-    //             // var offset = JSON.parse(localStorage.courseOffsets)[indexOffetsStorage].value-1;
-    //             // var element = document.getElementById(("section-" + (getParameterByName('kursusgang')+offset)));
-    //         } else {
-    //             var element = document.getElementById(("section-" + getParameterByName('kursusgang')));
-    //         }
-    //         console.log(getParameterByName('kursusgang'));
-    //         console.log(document.getElementById(("section-" + getParameterByName('kursusgang'))));
-    //         element.scrollIntoView();
-    //         window.scrollBy(0, -50);
-    //     }
-    // }, 1000);    
 }
 
 

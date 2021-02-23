@@ -3,8 +3,12 @@
         <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
     </head>
     <body>
-        <button id="addCourseOffset">Tilføj fag</button>
-        <button id="saveCourseOffset">Gem</button> <br>
+        <div>
+            <button id="addCourseOffset">Tilføj fag</button>
+            <button id="saveCourseOffset">Gem</button>
+            <button id="deleteCourseOffset">Slet</button>
+            <input  id="deleteCourseOffsetId" type="number" placeholder="Id på fag som skal slettes">
+        </div>
         <div id="container">
         </div>
         <script src="options.js"></script>
@@ -14,5 +18,12 @@
 <style>
     #container >* {
         margin: 5px 0;
+    }
+
+    #container label {
+        margin: 0 5px 0 10px;
+    }
+    div {
+        margin-bottom: 10px;
     }
 </style>
