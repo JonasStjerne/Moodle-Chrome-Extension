@@ -1,7 +1,7 @@
 {
     "name": "Moodle Extension",
     "version": "1.0",
-    "description": "Extension for chrome which improves functions regarding lectures on Moodle",
+    "description": "Extension for chrome which improves functions regarding viewing lectures on Moodle",
     "permissions": ["storage", "declarativeContent", "activeTab"],
     "background": {
         "scripts": ["background.js"],
