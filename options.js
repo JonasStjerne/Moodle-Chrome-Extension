@@ -22,13 +22,11 @@ document.getElementById("addCourseOffset").onclick = function() {
     document.getElementById("container").innerHTML += html + "<br>";
     selectElement(("courseOffset"+courseCount), "1");
     courseCount++;
-    console.log("addCourse ran");
 };
 
 
 //Saves all courses on save button press
 document.getElementById("saveCourseOffset").onclick = function() {
-    console.log("Save clicked");
     let courseOffsetsSave = [];
     for(i = 0; courseCount > i; i++) {
         let courseId = document.getElementById("course"+ i.toString()).value;
@@ -37,15 +35,7 @@ document.getElementById("saveCourseOffset").onclick = function() {
     }
     chrome.storage.sync.set({
     courses: courseOffsetsSave
-    }, function() {
-        console.log("Saved to chrome storage");
-        chrome.storage.sync.get({
-            courses:[]
-          }, 
-          function(result) {
-              console.log(result.courses);
-          });
-    });
+    }, function() {});
 };
 
 //Delete course
@@ -63,7 +53,6 @@ document.getElementById("deleteCourseOffset").onclick = function() {
                     chrome.storage.sync.set({
                         courses: courseOffsets
                     }, function() {
-                        console.log("Deleted item");
                         location.reload();
                     });
                     break;
@@ -81,7 +70,6 @@ document.getElementById("deleteCourseOffset").onclick = function() {
   function(result) {
       console.log(result.courses);
       for (let course in result.courses) {
-        //console.log(courseOffsets[course].courseId);
         let html = '<label for="course' + courseCount + '">Fag ID:</label>';
         html += '<input type="number" id="course' + courseCount + '" value="' +  result.courses[course].courseId+'" placeholder="Id på fag">';
         html += '<label for="courseOffset'+ courseCount +'">Offset:</label>';
@@ -93,7 +81,6 @@ document.getElementById("deleteCourseOffset").onclick = function() {
         html += '<option value="4">4</option>';
         html += '</select>';
         document.getElementById("container").innerHTML += html + "<br>";
-        console.log( result.courses[course].courseOffset);
         document.getElementById("courseOffset"+courseCount).children[result.courses[course].courseOffset].setAttribute("selected", "selected");
         courseCount++;
     }

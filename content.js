@@ -14,10 +14,7 @@ if (window.location.href.indexOf("https://www.moodle.aau.dk/local/planning/calen
                 let arrayKursusgangNumber = stringKursusgangNumber.split(" ");
                 var kursusgangNumber = arrayKursusgangNumber[0];
                 setTimeout(function(){
-                     console.log("Setting href");
-                    console.log(document.getElementsByClassName("modal-body plancal_event_view_popup_content plancal_popup_limit_content_height"));
                      if (document.getElementsByClassName("modal-body plancal_event_view_popup_content plancal_popup_limit_content_height")[0].children[1].children[0].children[2].children[0].getAttribute("href").indexOf("&kursusgang=") < 0) {
-                        console.log("if statement ran");
                         var urlKursus = document.getElementsByClassName("modal-body plancal_event_view_popup_content plancal_popup_limit_content_height")[0].children[1].children[0].children[2].children[0].getAttribute("href");
                          document.getElementsByClassName("modal-body plancal_event_view_popup_content plancal_popup_limit_content_height")[0].children[1].children[0].children[2].children[0].setAttribute("href", (urlKursus + "&kursusgang=" + kursusgangNumber));    
                     }
@@ -49,11 +46,8 @@ if (window.location.href.indexOf("www.moodle.aau.dk/course/view.php?") >= 0) {
         if (getParameterByName('kursusgang') != null) {
             if (courseOffsets.some(item => item.courseId == getParameterByName("id"))) {
                 for (i=0; courseOffsets.length > i; i++) {
-                    console.log("Ran for-loop");
                     if (courseOffsets[i].courseId == getParameterByName("id")) {
-                        console.log(courseOffsets[i].courseOffset);
                         var element = document.getElementById(("section-" + (Number(getParameterByName('kursusgang')) + Number(courseOffsets[i].courseOffset) - 1 )).toString());
-                        console.log(element);
                         break;
                     }
                 }
@@ -63,7 +57,6 @@ if (window.location.href.indexOf("www.moodle.aau.dk/course/view.php?") >= 0) {
             } else {
                 var element = document.getElementById(("section-" + getParameterByName('kursusgang')));
             }
-            console.log(document.getElementById(("section-" + getParameterByName('kursusgang'))));
             element.scrollIntoView();
             window.scrollBy(0, -50);
         }
