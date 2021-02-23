@@ -1,6 +1,5 @@
 var courseCount = 0;
-var dataLoad = false;
-console.log("test");
+var dataLoad;
 
 function selectElement(id, valueToSelect) {    
     let element = document.getElementById(id);
@@ -37,7 +36,7 @@ document.getElementById("addCourseOffset").onclick = function() {
   };
 
 
-if (localStorage.courseOffsets && !dataLoad) {
+if (localStorage.courseOffsets) {
     var courseOffsets = JSON.parse(localStorage.courseOffsets);
     console.log(courseOffsets);
     for (let course in courseOffsets) {
@@ -52,8 +51,8 @@ if (localStorage.courseOffsets && !dataLoad) {
         html += '<option value="4">4</option>';
         html += '</select>';
         document.getElementById("container").innerHTML += html + "<br>";
-        selectElement(("courseOffset"+courseCount), courseOffsets[course].courseOffset);
+        console.log(courseOffsets[course].courseOffset);
+        document.getElementById("courseOffset"+courseCount).children[courseOffsets[course].courseOffset].setAttribute("selected", "selected");
         courseCount++;
-        dataLoad = true;
     }
 }

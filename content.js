@@ -1,3 +1,5 @@
+var courseOffsets = JSON.parse(localStorage.courseOffsets);
+
 if (window.location.href.indexOf("https://www.moodle.aau.dk/local/planning/calendar.php") >= 0) {
     function getKursusgangNumber() {
        // try {
@@ -39,10 +41,16 @@ if (window.location.href.indexOf("www.moodle.aau.dk/course/view.php?") >= 0) {
     }
     setTimeout(function(){
         if (getParameterByName('kursusgang') != null) {
+            console.log(getParameterByName);
             if (localStorage.courseOffsets.indexOf(getParameterByName("id")) >= 0) {
-                var indexOffetsStorage = JSON.parse(localStorage.courseOffsets).findIndex(getParameterByName("id"));
-                var offset = JSON.parse(localStorage.courseOffsets)[indexOffetsStorage].value-1;
-                var element = document.getElementById(("section-" + (getParameterByName('kursusgang')+offset)));
+                for (i=0; courseOffsets >= i; i++) {
+                    if (courseOffsets[i].courseId == getParameterByName("id")) {
+                        var element = document.getElementById(("section-" + (getParameterByName('kursusgang')+courseOffsets[i].courseOffset)));
+                    }
+                }
+                // var indexOffetsStorage = JSON.parse(localStorage.courseOffsets).findIndex(getParameterByName("id"));
+                // var offset = JSON.parse(localStorage.courseOffsets)[indexOffetsStorage].value-1;
+                // var element = document.getElementById(("section-" + (getParameterByName('kursusgang')+offset)));
             } else {
                 var element = document.getElementById(("section-" + getParameterByName('kursusgang')));
             }
@@ -51,7 +59,7 @@ if (window.location.href.indexOf("www.moodle.aau.dk/course/view.php?") >= 0) {
             element.scrollIntoView();
             window.scrollBy(0, -50);
         }
-    }, 2000);    
+    }, 1000);    
 }
 
 
