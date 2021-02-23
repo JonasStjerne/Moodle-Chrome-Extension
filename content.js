@@ -28,7 +28,6 @@ if (window.location.href.indexOf("https://www.moodle.aau.dk/local/planning/calen
     const config = {attributes: true, childList: true, subtree: true};
     const observer = new MutationObserver(getKursusgangNumber);
     observer.observe(targetNode, config);
-    //observer.disconnect;
 }
 
 
@@ -51,16 +50,13 @@ if (window.location.href.indexOf("www.moodle.aau.dk/course/view.php?") >= 0) {
                         break;
                     }
                 }
-                // var indexOffetsStorage = JSON.parse(localStorage.courseOffsets).findIndex(getParameterByName("id"));
-                // var offset = JSON.parse(localStorage.courseOffsets)[indexOffetsStorage].value-1;
-                // var element = document.getElementById(("section-" + (getParameterByName('kursusgang')+offset)));
             } else {
                 var element = document.getElementById(("section-" + getParameterByName('kursusgang')));
             }
             element.scrollIntoView();
             window.scrollBy(0, -50);
         }
-    }, 1000);    
+    }, 500);    
 }
 
 
