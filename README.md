@@ -1,2 +1,2 @@
 # Moodle-Chrome-Extension
-Chrome extension for Moodle which improves functions regarding lectures on moodle
+Chrome-extension til Moodle, forbinder timerne i CalMoodle med de rigtige lektioner inde på kursussiden. Når der klikkes på lektionen i CalMoodle, scroller din browser ned til den pågældene time.
