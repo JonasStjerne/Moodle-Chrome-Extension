@@ -4,16 +4,16 @@ Chrome-extension til Moodle, som forbinder timerne i CalMoodle med lektioner ind
 ## Installering
 ### Download og udpak extension fra github
 klik på den grønne knap "Code" på Github. Herefter trykker du "Download ZIP".
-<img href="./images/download.jpg" width="100px">
+<img src="./images/download.jpg" width="100px">
 
 (Windows) Udpak ZIP-filen ved at højreklikke på filen og tryk "Udpak alle...", vælg herefter desitantionen den udpakkede fil skal gemmes på og tryk "Pak ud".
 
 ### Importer den som chrome-extension
 Åben chrome og skriv "chrome://extensions/" i adressebaren. 
 Sørg herefter for at "Udviklertilstand" er slået til øverst til højre.
-<img href="./images/udviklingstilstand.jpg">
+<img src="./images/udviklingstilstand.jpg">
 Klik på "Indløs upakket" øverst til venstre og find destinationen for extensionen som du udpakkede og tryk vælg mappe.
-<img href="./images/indløs_upakket.jpg">
+<img src="./images/indløs_upakket.jpg">
 
 ## Brug
 Extensionen scanner efter ordet "Kursusgang" i lektionerne i CalMoodle. Der vil derfor forekomme tilfælde, hvor den ikke kan finde den pågældene lektionen, da den kan hedde fx. "Workshop". Dette kan være bliver forbedret i en fremtidig version.
