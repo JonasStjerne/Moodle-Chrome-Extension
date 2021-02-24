@@ -12,7 +12,7 @@ klik på den grønne knap "Code" på Github og tryk herefter på "Download ZIP".
 Åben chrome og skriv "chrome://extensions/" i adressebaren. 
 Sørg herefter for at "Udviklertilstand" er slået til øverst til højre.
 <br><img src="./images/udviklingstilstand.JPG"><br>
-Klik på "Indløs upakket" øverst til venstre og find destinationen for extensionen som du udpakkede og tryk vælg mappe.
+Klik på "Indlæs upakket" øverst til venstre og find destinationen for extensionen som du udpakkede og tryk vælg mappe.
 <br>
 <img src="./images/indlæs_upakket.JPG">
 
