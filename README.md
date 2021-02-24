@@ -1,22 +1,23 @@
 # Moodle-Chrome-Extension
-Chrome-extension til Moodle, som forbinder timerne i CalMoodle med lektioner inde på kursussiden. Når der klikkes på lektionen i CalMoodle, scroller din browser ned til den pågældene time.
+Chrome-extension til Moodle, som forbinder timerne i CalMoodle med lektioner inde på kursussiden. Når der klikkes på lektionen i CalMoodle, scroller din browser ned til den pågældene lektion.
 
 ## Installering
 ### Download og udpak extension fra github
-klik på den grønne knap "Code" på Github. Herefter trykker du "Download ZIP".
-<img src="./images/download.jpg" width="100px">
+klik på den grønne knap "Code" på Github og tryk herefter på "Download ZIP".
+<br><img src="./images/download.jpg">
 
 (Windows) Udpak ZIP-filen ved at højreklikke på filen og tryk "Udpak alle...", vælg herefter desitantionen den udpakkede fil skal gemmes på og tryk "Pak ud".
 
 ### Importer den som chrome-extension
 Åben chrome og skriv "chrome://extensions/" i adressebaren. 
 Sørg herefter for at "Udviklertilstand" er slået til øverst til højre.
-<img src="./images/udviklingstilstand.jpg">
+<br><img src="./images/udviklingstilstand.JPG"><br>
 Klik på "Indløs upakket" øverst til venstre og find destinationen for extensionen som du udpakkede og tryk vælg mappe.
-<img src="./images/indløs_upakket.jpg">
+<br>
+<img src="./images/indlæs_upakket.JPG">
 
 ## Brug
-Extensionen scanner efter ordet "Kursusgang" i lektionerne i CalMoodle. Der vil derfor forekomme tilfælde, hvor den ikke kan finde den pågældene lektionen, da den kan hedde fx. "Workshop". Dette kan være bliver forbedret i en fremtidig version.
+Extensionen scanner efter ordet "Kursusgang" i lektionerne i CalMoodle. Der vil derfor forekomme tilfælde, hvor den ikke kan finde den pågældene lektionen, da lektionen fx. kan hedde "Workshop". Dette kan være bliver forbedret i en fremtidig version.
 
 Fag har generelt én boks/felt inde på deres side øverst, med information om faget og eksamen. Nogle fag kan ske at have 0 eller flere end én boks, derved vil extensionen ikke scroll ned til den rigtige lektion. For at justere dette følg guiden:
 
