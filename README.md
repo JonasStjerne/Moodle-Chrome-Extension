@@ -6,7 +6,10 @@ Chrome-extension til Moodle, som forbinder timerne i CalMoodle med lektioner ind
 klik på den grønne knap "Code" på Github og tryk herefter på "Download ZIP".
 <br><img src="./images/download.jpg">
 
+#### Udpak ZIP-fil
 (Windows) Udpak ZIP-filen ved at højreklikke på filen og tryk "Udpak alle...", vælg herefter desitantionen den udpakkede fil skal gemmes på og tryk "Pak ud".
+
+(MacOS) Åben filen og den pakker sig selv ud.
 
 ### Importer den som chrome-extension
 Åben chrome og skriv "chrome://extensions/" i adressebaren. 
