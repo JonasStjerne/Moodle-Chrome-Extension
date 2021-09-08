@@ -10,7 +10,10 @@ if (window.location.href.indexOf("https://www.moodle.aau.dk/local/planning/calen
        try {
             var kursusgang = document.getElementsByClassName("modal-title")[0].innerHTML;
             if (kursusgang) { 
-                let stringKursusgangNumber = kursusgang.slice(kursusgang.indexOf("Kursusgang")+11,kursusgang.length);
+                var stringKursusgangNumber = kursusgang.slice(kursusgang.indexOf("Kursusgang")+11,kursusgang.length);
+                if (stringKursusgangNumber == "") {
+                    var stringKursusgangNumber = kursusgang.slice(kursusgang.indexOf("Lecture")+8,kursusgang.length);
+                }
                 let arrayKursusgangNumber = stringKursusgangNumber.split(" ");
                 var kursusgangNumber = arrayKursusgangNumber[0];
                 setTimeout(function(){
